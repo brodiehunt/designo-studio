@@ -32,7 +32,7 @@ const HeaderNavStyles = styled.nav`
     li {
       padding: 0;
     }
-
+    
     a {
       color: var(--secondary-dark);
       font-size: 0.875rem;
