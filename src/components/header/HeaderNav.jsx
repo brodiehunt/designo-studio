@@ -39,6 +39,26 @@ const HeaderNavStyles = styled.nav`
       font-weight: 400;
       line-height: 0.875rem; 
       letter-spacing: 0.125rem;
+      transition: 0.2s ease-in all;
+      position: relative;
+    }
+
+    a:hover { 
+      color: var(--primary);
+    }  
+    a:focus {
+      outline: none;
+    };
+
+    a:focus::after {
+      content: '';
+      position: absolute;
+      background-color: var(--primary);
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      border-radius: 0.2rem;
     }
   }
 `;

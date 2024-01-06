@@ -14,6 +14,8 @@ export const ButtonLinkStyles = styled(Link)`
   border-radius: 0.5rem;
   cursor: pointer;
   transition: 0.2s ease-in all;
+  position: relative;
+  z-index: 2;
 
 
   &:hover, &:focus {

@@ -15,12 +15,12 @@ import graphicDesignTablet from '../assets/home/tablet/image-graphic-design.jpg'
 import graphicDesignMobile from '../assets/home/mobile/image-graphic-design.jpg';
 
 // Web design project images
-import webDesignExpress from '../assets/web-design/image-express.jpg';
-import webDesignTransfer from '../assets/web-design/image-transfer.jpg';
-import webDesignPhoton from '../assets/web-design/image-photon.jpg';
-import webDesignBuilder from '../assets/web-design/image-builder.jpg';
-import webDesignBlogr from '../assets/web-design/image-blogr.jpg';
-import webDesignCamp from '../assets/web-design/image-camp.jpg';
+import webDesignExpress from '../assets/web-design/desktop/image-express.jpg';
+import webDesignTransfer from '../assets/web-design/desktop/image-transfer.jpg';
+import webDesignPhoton from '../assets/web-design/desktop/image-photon.jpg';
+import webDesignBuilder from '../assets/web-design/desktop/image-builder.jpg';
+import webDesignBlogr from '../assets/web-design/desktop/image-blogr.jpg';
+import webDesignCamp from '../assets/web-design/desktop/image-camp.jpg';
 
 // App design project images
 import appDesignAirfilter from '../assets/app-design/desktop/image-airfilter.jpg';
@@ -132,33 +132,36 @@ export const categories = [
 export const linkCards = [
   {
     title: 'Web design',
-      url: '/web-design',
-      imgs: {
-        mobile: webDesignMobile,
-        tablet: webDesignTablet,
-        desktop: webDesignDesktop,
-        desktopSmall: webDesignDesktopSmall
-      }
+    url: '/web-design',
+    alt: 'Web Design',
+    imgs: {
+      mobile: webDesignMobile,
+      tablet: webDesignTablet,
+      desktop: webDesignDesktop,
+      desktopSmall: webDesignDesktopSmall
+    }
     
   },
   {
     title: 'App design',
-      url: '/app-design',
-      imgs: {
-        mobile: appDesignMobile,
-        tablet: appDesignTablet,
-        desktop: appDesignDesktop,
-      }
+    url: '/app-design',
+    alt: 'App desgin',
+    imgs: {
+      mobile: appDesignMobile,
+      tablet: appDesignTablet,
+      desktop: appDesignDesktop,
+    }
     
   },
   {
     title: 'Graphic design',
-      url: '/graphic-design',
-      imgs: {
-        mobile: graphicDesignMobile,
-        tablet: graphicDesignTablet,
-        desktop: graphicDesignDesktop,
-      }
+    url: '/graphic-design',
+    alt: 'Graphic Design',
+    imgs: {
+      mobile: graphicDesignMobile,
+      tablet: graphicDesignTablet,
+      desktop: graphicDesignDesktop,
+    }
     
   },
 

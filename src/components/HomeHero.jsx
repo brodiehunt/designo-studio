@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { ButtonLinkStyles } from './styles/ButtonLink';
 import phoneImg from '../assets/home/desktop/image-hero-phone.png';
+import backgroundCircle from '../assets/shared/desktop/bg-pattern-small-circle.svg';
 
 const HomeHeroStyles = styled.section`
+  position: relative;
   background-color: var(--primary);
   color: var(--primary-light);
   padding: 5rem 1.5rem;
@@ -44,6 +46,15 @@ const HomeHeroStyles = styled.section`
     transform: translateX(-50%);
   }
 
+  .circle {
+    position: absolute;
+    width: 40rem;
+    height: 40rem;
+    /* top: 6.5rem;
+    right: -50%; */
+    transform: translateX(-20%) rotate(45deg);
+  }
+
   @media (min-width: 768px){
     margin: 0 2.5rem;
     border-radius: 0.9375rem;
@@ -80,9 +91,16 @@ const HomeHeroStyles = styled.section`
       top: -10rem;
       left: 60%;
     }
+
+    .circle {
+      top: 0;
+      bottom: 0;
+      right: 0;
+      transform: translate(0) rotate(90deg)
+    }
   }
 
-  @media (min-width: 1110px) {
+  @media (min-width: 1150px) {
     margin: 0 auto;
   }
 `;
@@ -91,6 +109,11 @@ export default function HomeHero(){
 
   return (
     <HomeHeroStyles>
+      <img 
+        className="circle"
+        src={backgroundCircle}
+        aria-hidden="true"
+      /> 
       <div className="content"> 
         <h1>Award-winning custom designs and digital branding solutions</h1>
         <p>

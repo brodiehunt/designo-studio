@@ -33,8 +33,28 @@ const FooterNavStyles = styled.div`
     line-height: 0.875rem; 
     letter-spacing: 0.125rem;
     font-weight: 300;
+    position: relative;
+    transition: 0.2s ease-in all;
     cursor: pointer;
   } 
+
+  a:hover { 
+    color: var(--primary);
+  }  
+  a:focus {
+    outline: none;
+  };
+
+  a:focus::after {
+    content: '';
+    position: absolute;
+    background-color: var(--primary);
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 0.2rem;
+  }
 
   @media (min-width: 768px) {
     display: flex;

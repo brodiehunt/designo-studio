@@ -5,6 +5,7 @@ import close from '../../assets/shared/mobile/icon-close.svg';
 import HeaderNav from "./HeaderNav";
 import HeaderMenuModal from "./HeaderMenuModal";
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 
 const HeaderStyles = styled.header`
   position: relative;
@@ -12,7 +13,6 @@ const HeaderStyles = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 2.2rem 1.5rem;
-  max-width: 1111px;
   margin: 0 auto;
 
   .logo {
@@ -37,7 +37,8 @@ const HeaderStyles = styled.header`
     }
   }
 
-  @media (min-width: 1110px) {
+  @media (min-width: 1150px) {
+    max-width: 1111px;
     padding: 4rem 0;
   }
 `;
@@ -47,11 +48,13 @@ export default function Header(){
 
   return (
     <HeaderStyles>
-      <img 
-        className="logo"
-        src={Logo} 
-        alt="Designo Company Logo" 
-      />
+      <Link to="/">
+        <img 
+          className="logo"
+          src={Logo} 
+          alt="Designo Company Logo" 
+        />
+      </Link>
       <button 
         className={modalOpen ? 'visible nav-toggle' : 'nav-toggle'}
         onClick={() => setModalOpen(!modalOpen)}
