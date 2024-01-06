@@ -19,6 +19,7 @@ export const locations = [
     location: 'Canada',
     svg: canadaIllustration,
     url: '/locations',
+    alt: 'Illustration of CN Tower in Toronto',
     map: {
       small: canadaMapSmall,
       large: canadaMapLarge
@@ -37,6 +38,7 @@ export const locations = [
     location: 'Australia',
     svg: australiaIllustration,
     url: '/locations',
+    alt: 'Illustration of the opera house',
     map: {
       small: australiaMapSmall,
       large: australiaMapLarge
@@ -54,6 +56,7 @@ export const locations = [
   {
     location: 'United Kingdom',
     svg: ukIllustration,
+    alt: 'Illustration of Tower Bridge in london',
     url: '/locations',
     map: {
       small: ukMapSmall,

@@ -1,16 +1,20 @@
 import styled from "styled-components";
-
+import backgroundCircle from '../../assets/shared/desktop/bg-pattern-small-circle.svg';
+import backgroundCircle3 from '../../assets/shared/desktop/bg-pattern-three-circles.svg';
 const AboutSectionStyles = styled.section`
-  
+  margin-bottom: ${({$type}) => $type ? '' : '7.5rem'};
+
   img {
     width: 100%;
     display: block;
   }
 
   .content-container {
+    position: relative;
     padding: 5rem 1.5rem;
     background-color: ${({$theme}) => $theme === 'dark' ? 'var(--primary)' : '#FDF3F0'};
     color: ${({$theme}) => $theme === 'dark' ? 'var(--primary-light)' : 'var(--secondary-dark)'};
+    overflow: hidden;
   }
 
   h2 {
@@ -27,6 +31,23 @@ const AboutSectionStyles = styled.section`
     font-size: 0.9375rem;
     font-weight: 400;
     line-height: 1.5625rem;
+  }
+
+  .circle-about {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-40%) rotate(-90deg);
+    width: 20rem;
+  }
+
+  .circles-three {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 36.5rem;
+    width: 36.5rem;
+
   }
 
   @media (min-width: 768px) {
@@ -49,6 +70,22 @@ const AboutSectionStyles = styled.section`
       max-width: 650px;
       margin: 0 auto;
       margin-bottom: 1.5rem;
+    }
+
+    .circle-about {
+      right: 20%;
+      bottom: 40%;
+      top: unset;
+      transform: translateY(0) rotate(-180deg);
+      width: 40rem;
+    }
+
+    .circles-three {
+      top: unset;
+      left: unset;
+      right: 0;
+      bottom: 2.5rem;
+      
     }
 
   }
@@ -77,6 +114,17 @@ const AboutSectionStyles = styled.section`
     p {
       text-align: left;
     }
+
+    .circle-about {
+      right: -20px;
+      bottom: 0;
+    }
+
+    .circles-three {
+      right: 0;
+      bottom: 0;
+      transform: translateX(-25%);
+    }
   }
 
   @media (min-width: 1150px) {
@@ -97,6 +145,11 @@ export default function AboutSection({info, theme, layout, type}) {
         <img src={info.mobile} alt={info.alt} />
       </picture>
       <div className="content-container">
+        {type ? (
+          <img className="circle-about" src={backgroundCircle} />
+        ): (
+          <img className="circles-three" src={backgroundCircle3} />
+        )}
         <h2>{info.title}</h2>
         <p>{info.content1}</p>
         {info?.content2 &&
