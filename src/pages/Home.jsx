@@ -1,9 +1,9 @@
-
+import HomeHero from "../components/HomeHero"
 
 export default function Home(){
   return (
     <div>
-      Hello Home
+      <HomeHero />
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Logo from '../assets/shared/desktop/logo-dark.png';
-import hamburger from '../assets/shared/mobile/icon-hamburger.svg';
-import close from '../assets/shared/mobile/icon-close.svg';
+import Logo from '../../assets/shared/desktop/logo-dark.png';
+import hamburger from '../../assets/shared/mobile/icon-hamburger.svg';
+import close from '../../assets/shared/mobile/icon-close.svg';
 import HeaderNav from "./HeaderNav";
 import HeaderMenuModal from "./HeaderMenuModal";
 import { useState } from "react";
@@ -35,6 +35,10 @@ const HeaderStyles = styled.header`
     .nav-toggle {
       display: none;
     }
+  }
+
+  @media (min-width: 1110px) {
+    padding: 4rem 0;
   }
 `;
 

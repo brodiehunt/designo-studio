@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import HeaderMenuModal from './HeaderMenuModal';
+
 const HeaderNavStyles = styled.nav`
   display: ${({$type}) => ($type === 'small') ? 'block' : 'none'};
   ul {

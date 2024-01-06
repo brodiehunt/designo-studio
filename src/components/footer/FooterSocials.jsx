@@ -1,8 +1,8 @@
-import IconFacebook from '../assets/shared/desktop/icon-facebook.svg';
-import IconInstagram from '../assets/shared/desktop/icon-instagram.svg';
-import IconTwitter from '../assets/shared/desktop/icon-twitter.svg';
-import IconYoutube from '../assets/shared/desktop/icon-youtube.svg';
-import IconPintrest from '../assets/shared/desktop/icon-pinterest.svg';
+import IconFacebook from '../../assets/shared/desktop/icon-facebook.svg';
+import IconInstagram from '../../assets/shared/desktop/icon-instagram.svg';
+import IconTwitter from '../../assets/shared/desktop/icon-twitter.svg';
+import IconYoutube from '../../assets/shared/desktop/icon-youtube.svg';
+import IconPintrest from '../../assets/shared/desktop/icon-pinterest.svg';
 import styled from 'styled-components';
 
 const FooterSocialStyles = styled.div`

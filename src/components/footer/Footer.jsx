@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import FooterNav from "./FooterNav";
 import FooterSocials from "./FooterSocials";
-import ContactInfo from "./ContactInfo";
+import ContactInfo from "../ContactInfo";
 
 const FooterStyles = styled.footer`
   background-color: var(--primary-dark);

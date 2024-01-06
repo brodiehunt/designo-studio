@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Logo from '../assets/shared/desktop/logo-light.png';
+import Logo from '../../assets/shared/desktop/logo-light.png';
 import { Link } from "react-router-dom";
 const FooterNavStyles = styled.div`
   max-width: 1111px;
