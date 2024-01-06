@@ -22,7 +22,7 @@ export default function FooterExtension() {
 
   return (
     <FooterExtensionStyles>
-
+      
     </FooterExtensionStyles>
   )
 }
