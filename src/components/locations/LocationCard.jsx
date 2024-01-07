@@ -15,6 +15,8 @@ const LocationCardStyles = styled.section`
     background-color: black;
     width: 100%;
     height: 300px;
+    position: relative;
+    z-index: 1;
   }
   .content-container {
     position: relative;
