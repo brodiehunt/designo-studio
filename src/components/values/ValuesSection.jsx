@@ -19,6 +19,7 @@ const ValuesSectionStyles = styled.div`
   margin: 0 auto;
   max-width: 1111px;
   padding: 0;
+  /* margin-bottom: */
  }
 `;
 

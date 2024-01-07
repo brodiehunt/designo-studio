@@ -22,4 +22,8 @@ export const ButtonLinkStyles = styled(Link)`
     color: var(--primary-light);
     background-color: var(--secondary);
   }
+
+  &:focus {
+    outline: ${({$theme}) => $theme === 'dark' ? '2px solid var(--primary)' : '2px solid var(--primary-light)'};
+  }
 `

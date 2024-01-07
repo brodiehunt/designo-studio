@@ -1,4 +1,5 @@
 import DesignHero from '../components/design/DesignHero';
+import ProjectsContainer from '../components/design/ProjectsContainer';
 import FooterCallToAction from '../components/FooterCallToAction';
 import FooterExtension from '../components/footer/FooterExtension';
 import { useLocation } from 'react-router-dom';
@@ -15,6 +16,7 @@ export default function DesignPage() {
   return (
     <div>
       <DesignHero title={categoryInformation.title} content={categoryInformation.content}/>
+      <ProjectsContainer projects={categoryInformation.projects} />
       <FooterCallToAction />
       <FooterExtension />
     </div>
