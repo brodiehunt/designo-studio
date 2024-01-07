@@ -147,7 +147,6 @@ export default function FooterCallToAction() {
         </p>
       </div>
       <ButtonLinkStyles to="/contact">Get in touch</ButtonLinkStyles>
-      <div className="black-bottom" aria-hidden="true"></div>
     </FooterCallToActionStyles>
   )
 }

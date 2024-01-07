@@ -21,8 +21,8 @@ export const locations = [
     url: '/locations',
     alt: 'Illustration of CN Tower in Toronto',
     map: {
-      small: canadaMapSmall,
-      large: canadaMapLarge
+      small: canadaMapLarge,
+      large: canadaMapSmall
     },
     address: {
       office: 'Designo Central Office',
@@ -40,8 +40,8 @@ export const locations = [
     url: '/locations',
     alt: 'Illustration of the opera house',
     map: {
-      small: australiaMapSmall,
-      large: australiaMapLarge
+      small: australiaMapLarge,
+      large: australiaMapSmall
     },
     address: {
       office: 'Designo AU Office',
@@ -59,8 +59,8 @@ export const locations = [
     alt: 'Illustration of Tower Bridge in london',
     url: '/locations',
     map: {
-      small: ukMapSmall,
-      large: ukMapLarge
+      small: ukMapLarge,
+      large: ukMapSmall
     },
     address: {
       office: 'Designo UK Office',

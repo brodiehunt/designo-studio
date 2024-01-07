@@ -6,8 +6,8 @@ const ContactInfoStyles = styled.div`
   justify-content: center;
   gap: 2.5rem;
   text-align: center;
-  color: var(--primary-light);
-  opacity: 0.5;
+  color: ${({$theme}) => $theme ? 'var(--secondary-dark)' : 'var(--primary-light)'};
+  opacity: ${({$theme}) => $theme ? '1' : '0.5'};
   line-height: 1.625rem;
 
   .bold {
@@ -16,34 +16,37 @@ const ContactInfoStyles = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: row;
-    flex-grow: 1;
-    justify-content: start;
+    justify-content: space-between;
+    align-items: start;
     text-align: start;
-    
+    gap: 6rem;
     .column1, .column2 {
       flex-grow: 1;
-      
     }
+  }
+
+  @media (min-width: 900px) {
+    gap: 8rem;
   }
 `
 
-export default function ContactInfo({contact}) {
+export default function ContactInfo({location, theme}) {
 
   return (
-    <ContactInfoStyles>
+    <ContactInfoStyles $theme={theme}>
       <div className="column1">
         <div className="bold">
-          {contact?.office || 'Designo Central Office'}
+          {location?.address.office || 'Designo Central Office'}
         </div>
-        <p>{contact?.address.street || '3886 Wellington Street'}</p>
-        <p>{contact?.address.location || 'Toronto, Ontario M9C 3J5'}</p>
+        <p>{location?.address.street || '3886 Wellington Street'}</p>
+        <p>{location?.address.city || 'Toronto, Ontario M9C 3J5'}</p>
       </div>
       <div className="column2">
       <div className="bold">
-          Contact Us (Central Office)
+          Contact {!location && 'Us (Central Office)'}
         </div>
-        <p>P: {contact?.phone || '+1 253-863-8967'}</p>
-        <p>M: {contact?.email || 'contact@designo.co'}</p>
+        <p>P: {location?.contact.phone || '+1 253-863-8967'}</p>
+        <p>M: {location?.contact.email || 'contact@designo.co'}</p>
       </div>
     </ContactInfoStyles>
   )
