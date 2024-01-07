@@ -11,6 +11,19 @@ const FooterSocialStyles = styled.div`
   gap: 1rem;
   margin-top: 2.5rem;
 
+  .social-link {
+    transition: 0.2s ease-in all;
+  }
+
+  .social-link:hover {
+    transform: scale(1.15);
+  }
+
+  .social-link:focus {
+    outline: none;
+    border-bottom: 3px solid var(--primary);
+  }
+
   @media (min-width: 768px) {
     flex-grow: 1;
     justify-content: end;
@@ -19,11 +32,21 @@ const FooterSocialStyles = styled.div`
 export default function FooterSocials() {
   return (
     <FooterSocialStyles>
-      <img src={IconFacebook} />
-      <img src={IconYoutube} />
-      <img src={IconTwitter} />
-      <img src={IconPintrest} />
-      <img src={IconInstagram} />
+      <a href="" className="social-link">
+        <img src={IconFacebook} />
+      </a>
+      <a href="" className="social-link">
+        <img src={IconYoutube} />
+      </a>
+      <a href="" className="social-link">
+        <img src={IconTwitter} />
+      </a>
+      <a href="" className="social-link">
+        <img src={IconPintrest} />
+      </a>
+      <a href="" className="social-link">
+        <img src={IconInstagram} />
+      </a>
     </FooterSocialStyles>
   )
 }

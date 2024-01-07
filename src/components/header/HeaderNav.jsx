@@ -64,23 +64,23 @@ const HeaderNavStyles = styled.nav`
 `;
 
 
-export default function HeaderNav({type}) {
+export default function HeaderNav({type, setModalOpen}) {
 
   return (
     <HeaderNavStyles $type={type}>
       <ul>
         <li>
-          <Link to="/our-company">
+          <Link to="/our-company" onClick={() => setModalOpen(false)}>
             Our company
           </Link>
         </li>
         <li>
-        <Link to="/locations">
+        <Link to="/locations" onClick={() => setModalOpen(false)}>
             Locations
           </Link>
         </li>
         <li>
-        <Link to="/contact">
+        <Link to="/contact" onClick={() => setModalOpen(false)}>
             Contact
           </Link>
         </li>

@@ -34,6 +34,7 @@ const ContactHeroStyles = styled.div`
       position: absolute;
       width: 18.5rem;
       height: 18.5rem;
+      pointer-events: none;
   }
 
   .circle1 {

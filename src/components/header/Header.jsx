@@ -17,6 +17,26 @@ const HeaderStyles = styled.header`
 
   .logo {
     width: 12.625rem;
+  } 
+  
+  .logo-link {
+    position:relative;
+  }
+
+  .logo-link:focus {
+      outline: none;
+  };
+
+  .logo-link:focus::after {
+    content: '';
+    position: absolute;
+    background-color: var(--primary);
+    bottom: -10px;
+    /* bottom: 0; */
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 0.2rem;
   }
 
   .nav-toggle {
@@ -48,7 +68,7 @@ export default function Header(){
 
   return (
     <HeaderStyles>
-      <Link to="/">
+      <Link to="/" className="logo-link">
         <img 
           className="logo"
           src={Logo} 
@@ -77,7 +97,7 @@ export default function Header(){
       </button>
       <HeaderNav type='large'/>
       {modalOpen && 
-        <HeaderMenuModal />
+        <HeaderMenuModal setModalOpen={setModalOpen}/>
       }
     </HeaderStyles>
   )

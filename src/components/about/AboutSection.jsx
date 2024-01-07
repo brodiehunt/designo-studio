@@ -39,6 +39,7 @@ const AboutSectionStyles = styled.section`
     right: 0;
     transform: translateY(-40%) rotate(-90deg);
     width: 20rem;
+    pointer-events: none;
   }
 
   .circles-three {
@@ -47,7 +48,7 @@ const AboutSectionStyles = styled.section`
     left: 0;
     height: 36.5rem;
     width: 36.5rem;
-
+    pointer-events: none;
   }
 
   @media (min-width: 768px) {

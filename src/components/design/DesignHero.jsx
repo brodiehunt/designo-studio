@@ -32,6 +32,7 @@ const DesignHeroStyles = styled.section`
     position: absolute;
     width: 18.5rem;
     height: 18.5rem;
+    pointer-events: none;
   }
 
   .one {

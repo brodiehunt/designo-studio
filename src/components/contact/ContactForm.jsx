@@ -84,6 +84,10 @@ const ButtonStyles = styled.button`
     background-color: var(--secondary);
   }
 
+  &:focus {
+    outline: ${({$theme}) => $theme === 'dark' ? '2px solid var(--primary)' : '2px solid var(--primary-light)'};
+  }
+
   @media (min-width: 768px) {
     align-self: end;
   }

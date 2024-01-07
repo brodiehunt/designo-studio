@@ -25,6 +25,8 @@ export const locations = [
       large: canadaMapSmall
     },
     address: {
+      latitude: 43.64824,
+      longitude: -79.37640,
       office: 'Designo Central Office',
       street: '3886 Wellington Street',
       city: 'Toronto, Ontario M9C 3J5',
@@ -44,6 +46,8 @@ export const locations = [
       large: australiaMapSmall
     },
     address: {
+      latitude: -33.85762,
+      longitude: 151.21532,
       office: 'Designo AU Office',
       street: '19 Balonne Street',
       city: 'New South Wales 2443',
@@ -63,6 +67,8 @@ export const locations = [
       large: ukMapSmall
     },
     address: {
+      latitude: 51.50068,
+      longitude: -0.12433,
       office: 'Designo UK Office',
       street: '13  Colorado Way',
       city: 'Rhyd-y-fro SA8 9GA',

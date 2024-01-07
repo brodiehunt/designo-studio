@@ -44,15 +44,15 @@ const HomeHeroStyles = styled.section`
     left: 50%;
     top: -5rem;
     transform: translateX(-50%);
+    pointer-events: none;
   }
 
   .circle {
     position: absolute;
     width: 40rem;
     height: 40rem;
-    /* top: 6.5rem;
-    right: -50%; */
     transform: translateX(-20%) rotate(45deg);
+    pointer-events: none;
   }
 
   @media (min-width: 768px){

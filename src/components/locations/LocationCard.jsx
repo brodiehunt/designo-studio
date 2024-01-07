@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ContactInfo from '../ContactInfo';
 import backgroundCircles3 from '../../assets/shared/desktop/bg-pattern-three-circles.svg';
+import SimpleMap from "../leaflet/SimpleMap";
 
 const LocationCardStyles = styled.section`
   margin-bottom: 2.5rem;
@@ -10,11 +11,11 @@ const LocationCardStyles = styled.section`
     margin-bottom: 7.5rem;
   }
 
-  img {
+  .map-container {
+    background-color: black;
     width: 100%;
-    display: block;
+    height: 300px;
   }
-
   .content-container {
     position: relative;
     padding: 5rem 4.5rem;
@@ -39,6 +40,7 @@ const LocationCardStyles = styled.section`
     width: 38.5rem;
     top: 0;
     left: 0;
+    pointer-events: none;
   }
 
   @media (min-width: 768px) {
@@ -48,11 +50,11 @@ const LocationCardStyles = styled.section`
     grid-template-rows: 1fr 1fr;
     gap: 2rem;
 
-    picture {
-      img {
-        /* margin-bottom: 2rem; */
-        border-radius: 0.9375rem;
-      }
+    .map-container {
+      width: 100%;
+      height: 100%;
+      border-radius: 0.9375rem;
+      overflow: hidden;
     }
 
     .content-container {
@@ -74,16 +76,11 @@ const LocationCardStyles = styled.section`
     grid-row: 1 / 2;
     margin-bottom: 2rem;
 
-    picture {
+    .map-container {
       grid-column: ${({$layout}) => $layout ? '1/ 2' : '2/3'};
       grid-row: 1 / 2;
       display: block;
-
-      img {
-        height: 100%;
-      }
     }
-
     .content-container {
       grid-column: ${({$layout}) => $layout ? '2/ 3' : '1/2'}
     }
@@ -101,11 +98,13 @@ export default function LocationCard({location, layout}) {
 
   return (
     <LocationCardStyles $layout={layout}>
-      <picture>
-        <source media="(min-width: 1024px)" srcSet={location.map.small} />
-        <source media="(min-width: 600px)" srcSet={location.map.large} />
-        <img src={location.map.small} alt={`Location of ${location.location} office on map.`} />
-      </picture>
+      <div className="map-container">
+        <SimpleMap 
+          latitude={location.address.latitude}
+          longitude={location.address.longitude}
+          office={location.address.office}
+        />
+      </div>
       <div className="content-container">
         <img className="circles" src={backgroundCircles3} aria-hidden="true" />
         <h2>{location.location}</h2>

@@ -5,6 +5,9 @@ const CategoryLinkCardStyles = styled(Link)`
   width: 100%;
   position: relative;
   /* margin-bottom: 1.5rem; */
+  &:focus {
+    outline: 3px solid var(--primary);
+  }
 
   img {
     border-radius: 0.9375rem;

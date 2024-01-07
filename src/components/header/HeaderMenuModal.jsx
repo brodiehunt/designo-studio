@@ -8,7 +8,7 @@ const HeaderMenuModalStyles = styled.div`
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: calc(100svh - 100%);
-  z-index: 1;
+  z-index: 3;
 
   .dropdown-container {
     background: #1D1C1E;
@@ -20,12 +20,12 @@ const HeaderMenuModalStyles = styled.div`
   }
 `
 
-export default function HeaderMenuModal() {
+export default function HeaderMenuModal({setModalOpen}) {
 
   return (
-    <HeaderMenuModalStyles>
+    <HeaderMenuModalStyles onClick={() => setModalOpen(false)}>
       <div className="dropdown-container">
-        <HeaderNav type="small" />
+        <HeaderNav type="small" setModalOpen={setModalOpen}/>
       </div>
     </HeaderMenuModalStyles>
   )

@@ -15,6 +15,7 @@ const LocationCallToActionStyles = styled.div`
   .circle {
     position: absolute;
     left: 0;
+    pointer-events: none;
   }
 
   &:nth-child(1) .circle{
