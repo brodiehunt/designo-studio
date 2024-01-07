@@ -1,7 +1,11 @@
-
+import ContactHero from "../components/contact/ContactHero";
+import LocationsSection from '../components/locations/LocationsSection';
 
 export default function Contact() {
   return (
-    <div>Contact page</div>
+    <div>
+      <ContactHero />
+      <LocationsSection />
+    </div>
   )
 }
