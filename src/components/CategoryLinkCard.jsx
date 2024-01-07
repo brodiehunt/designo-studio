@@ -81,15 +81,19 @@ const CategoryLinkCardStyles = styled(Link)`
   @media (min-width: 1024px) {
     &:first-child {
       grid-row-start: 1;
-      grid-row-end: 3;
+      grid-row-end: ${({$smallGrid}) => $smallGrid ? '2' : '3'};
     }
+
   }
 `;
 
-export default function CategoryLinkCard({category}) {
-
+export default function CategoryLinkCard({category, smallGrid}) {
+  let desktopImg = category.imgs.desktop;
+  if (category.title === 'Web design' && smallGrid) {
+    desktopImg = category.imgs.desktopSmall;
+  }
   return (
-    <CategoryLinkCardStyles to={`/design${category.url}`}>
+    <CategoryLinkCardStyles to={`/design${category.url}`} $smallGrid={smallGrid} >
       <div className="screen" aria-hidden="true"></div>
       <div className="text">
         <h2>{category.title}</h2>
@@ -99,7 +103,7 @@ export default function CategoryLinkCard({category}) {
         </div>
       </div>
       <picture>
-        <source media="(min-width: 1024px)" srcSet={category.imgs.desktop} />
+        <source media="(min-width: 1024px)" srcSet={desktopImg} />
         <source media="(min-width: 768px)" srcSet={category.imgs.tablet} />
         <img src={category.imgs.mobile} alt={category.alt} />
       </picture>
