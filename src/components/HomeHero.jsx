@@ -2,8 +2,9 @@ import styled from 'styled-components';
 import { ButtonLinkStyles } from './styles/ButtonLink';
 import phoneImg from '../assets/home/desktop/image-hero-phone.png';
 import backgroundCircle from '../assets/shared/desktop/bg-pattern-small-circle.svg';
+import { motion } from 'framer-motion';
 
-const HomeHeroStyles = styled.section`
+const HomeHeroStyles = styled(motion.section)`
   position: relative;
   background-color: var(--primary);
   color: var(--primary-light);
@@ -109,7 +110,10 @@ export default function HomeHero(){
 
   return (
     <HomeHeroStyles>
-      <img 
+      <motion.img 
+        initial={{scale: 0, opacity: 0}}
+        animate={{scale: 1, opacity: 1}}
+        transition={{duration: 1.5}}
         className="circle"
         src={backgroundCircle}
         aria-hidden="true"
@@ -124,7 +128,10 @@ export default function HomeHero(){
         </ButtonLinkStyles>
       </div>
       <div className="img-container">
-        <img 
+        <motion.img 
+          initial={{scale: 0, x: '-50%', opacity: 0}}
+          animate={{scale: 1, x: '-50%', opacity: 1}}
+          transition={{duration: 1}}
           src={phoneImg} 
           alt="phone illustration of our digital designs" 
           className="phone-img"

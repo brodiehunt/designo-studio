@@ -6,6 +6,7 @@ import HeaderNav from "./HeaderNav";
 import HeaderMenuModal from "./HeaderMenuModal";
 import { useState } from "react";
 import { Link } from 'react-router-dom';
+import { AnimatePresence } from "framer-motion";
 
 const HeaderStyles = styled.header`
   position: relative;
@@ -96,9 +97,11 @@ export default function Header(){
         />
       </button>
       <HeaderNav type='large'/>
-      {modalOpen && 
-        <HeaderMenuModal setModalOpen={setModalOpen}/>
-      }
+      <AnimatePresence>
+        {modalOpen && 
+          <HeaderMenuModal setModalOpen={setModalOpen}/>
+        }
+      </AnimatePresence>
     </HeaderStyles>
   )
 }

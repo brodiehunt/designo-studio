@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const HeaderNavStyles = styled.nav`
   display: ${({$type}) => ($type === 'small') ? 'block' : 'none'};
@@ -9,6 +10,7 @@ const HeaderNavStyles = styled.nav`
 
     li {
       padding: 1rem 0;
+      overflow: hidden;
     }
 
     a {
@@ -20,6 +22,7 @@ const HeaderNavStyles = styled.nav`
       line-height: 1.5625rem; /* 104.167% */
       letter-spacing: 0.125rem;
     }
+
 
   @media (min-width: 768px) {
     position: relative;
@@ -63,28 +66,93 @@ const HeaderNavStyles = styled.nav`
   }
 `;
 
+const linkVariants = {
+  initial: {
+    y: 50,
+  },
+  animate: {
+    y: 0,
+    transition: {
+      duration: 0.2,
+    }
+  },
+  exit: {
+    y: 50,
+    transition: {
+      duration: 0.15
+    }
+  }
+}
+
+const containerVariants = {
+  initial: {
+    transition: {
+      staggerChildren: 0.1,
+    }
+  },
+  animate: {
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.15,
+    }
+  },
+  exit: {
+    transition: {
+      staggerChildren: 0.05,
+    } 
+  }
+}
 
 export default function HeaderNav({type, setModalOpen}) {
 
   return (
     <HeaderNavStyles $type={type}>
-      <ul>
+      <motion.ul
+        variants={containerVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+      >
         <li>
-          <Link to="/our-company" onClick={() => setModalOpen(false)}>
-            Our company
-          </Link>
+          <motion.div
+            variants={linkVariants}
+            // initial="initial"
+            // animate="animate"
+            // exit="exit"
+          >
+            <Link 
+              to="/our-company" 
+              onClick={() => setModalOpen(false)}
+            >
+              Our company
+            </Link>
+          </motion.div>
         </li>
         <li>
-        <Link to="/locations" onClick={() => setModalOpen(false)}>
-            Locations
-          </Link>
+          <motion.div
+            variants={linkVariants}
+            // initial="initial"
+            // animate="animate"
+            // exit="exit"
+          >
+            <Link to="/locations" onClick={() => setModalOpen(false)}>
+              Locations
+            </Link>
+          </motion.div>
         </li>
         <li>
-        <Link to="/contact" onClick={() => setModalOpen(false)}>
-            Contact
-          </Link>
+          <motion.div
+            variants={linkVariants}
+            // initial="initial"
+            // animate="animate"
+            // exit="exit"
+          >
+            <Link to="/contact" onClick={() => setModalOpen(false)}>
+              Contact
+            </Link>
+          </motion.div>
         </li>
-      </ul>
+      </motion.ul>
     </HeaderNavStyles>
   )
 }

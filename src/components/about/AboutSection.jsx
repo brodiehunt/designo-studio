@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import backgroundCircle from '../../assets/shared/desktop/bg-pattern-small-circle.svg';
 import backgroundCircle3 from '../../assets/shared/desktop/bg-pattern-three-circles.svg';
-const AboutSectionStyles = styled.section`
+import { motion } from 'framer-motion';
+
+const AboutSectionStyles = styled(motion.section)`
   margin-bottom: ${({$type}) => $type ? '' : '7.5rem'};
 
   img {
@@ -139,7 +141,14 @@ const AboutSectionStyles = styled.section`
 export default function AboutSection({info, theme, layout, type}) {
   
   return (
-    <AboutSectionStyles $theme={theme} $layout={layout} $type={type}>
+    <AboutSectionStyles 
+      $theme={theme} 
+      $layout={layout} 
+      $type={type}
+      initial={{opacity: 0 }}
+      whileInView={{opacity: 1}}
+      transition={{duration: 1, }}
+    >
       <picture>
         <source media="(min-width: 1024px)" srcSet={info.desktop} />
         <source media="(min-width: 600px)" srcSet={info.tablet} />

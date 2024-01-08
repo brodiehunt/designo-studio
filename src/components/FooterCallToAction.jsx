@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { ButtonLinkStyles } from "./styles/ButtonLink";
 import backgroundImage from '../assets/shared/desktop/bg-pattern-small-circle.svg';
+import { motion } from 'framer-motion';
 
-const FooterCallToActionStyles = styled.article`
+const FooterCallToActionStyles = styled(motion.article)`
   position: relative;
   padding: 4.5rem 1.5rem;
   margin: 0 1.5rem;
@@ -115,7 +116,10 @@ const FooterCallToActionStyles = styled.article`
 export default function FooterCallToAction() {
 
   return (
-    <FooterCallToActionStyles>
+    <FooterCallToActionStyles
+      initial={{x: -300}}
+      whileInView={{x: 0}}
+    >
       <img 
         src={backgroundImage} 
         className="circle one"

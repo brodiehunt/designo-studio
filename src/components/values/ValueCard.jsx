@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import backgroundCircle from '../../assets/shared/desktop/bg-pattern-small-circle.svg';
+import { motion } from 'framer-motion';
 
-const ValueCardStyles = styled.div`
+const ValueCardStyles = styled(motion.div)`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -72,10 +73,16 @@ const ValueCardStyles = styled.div`
   }
 `;
 
-export default function ValueCard({value}) {
+export default function ValueCard({value, index}) {
+  const delay = index / 6;
 
   return (
-    <ValueCardStyles>
+    <ValueCardStyles
+      initial={{y: 200}}
+      whileInView={{y: 0}}
+      transition={{delay: delay}}
+      viewport={{ once: true, amount: 0.01 }}
+    >
      
 
       <div className="img-container">

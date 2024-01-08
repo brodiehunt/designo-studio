@@ -33,7 +33,7 @@ export default function LocationsSection() {
     <LocationsSectionStyles>
       {locations.map((location, index) => {
         return (
-          <LocationCallToAction key={index} location={location} />
+          <LocationCallToAction key={index} index={index} location={location} />
         )
       })}
     </LocationsSectionStyles>

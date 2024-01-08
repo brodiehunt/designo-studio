@@ -30,7 +30,7 @@ export default function ValuesSection() {
     <ValuesSectionStyles>
       {values.map((value, index) => {
         return (
-          <ValueCard key={index} value={value} />
+          <ValueCard key={index} index={index} value={value} />
         )
       })}
     </ValuesSectionStyles>

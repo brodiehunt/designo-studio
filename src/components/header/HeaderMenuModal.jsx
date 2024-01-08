@@ -1,7 +1,8 @@
 import styled from "styled-components"
 import HeaderNav from "./HeaderNav"
+import { AnimatePresence, motion } from 'framer-motion';
 
-const HeaderMenuModalStyles = styled.div`
+const HeaderMenuModalStyles = styled(motion.div)`
   position: absolute;
   top: 100%;
   left: 0;
@@ -9,6 +10,7 @@ const HeaderMenuModalStyles = styled.div`
   width: 100%;
   height: calc(100svh - 100%);
   z-index: 3;
+  transform-origin: top;
 
   .dropdown-container {
     background: #1D1C1E;
@@ -19,14 +21,42 @@ const HeaderMenuModalStyles = styled.div`
     display: none;
   }
 `
+const menuVariants = {
+  initial: {
+    scaleY: 0
+  },
+  animate: {
+    scaleY: 1,
+    transition: {
+      duration: 0.3,
+      ease: [0.12, 0, 0.39, 0]
+    }
+  },
+  exit: {
+    scaleY: 0,
+    transition: {
+      duration: 0.3,
+      delay: 0.3,
+      ease: [0.12, 0, 0.39, 1]
+    }
+  }
+}
 
 export default function HeaderMenuModal({setModalOpen}) {
 
   return (
-    <HeaderMenuModalStyles onClick={() => setModalOpen(false)}>
-      <div className="dropdown-container">
+    <HeaderMenuModalStyles 
+      variants={menuVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      onClick={() => setModalOpen(false)}
+    >
+      <motion.div 
+        className="dropdown-container"
+      >
         <HeaderNav type="small" setModalOpen={setModalOpen}/>
-      </div>
+      </motion.div>
     </HeaderMenuModalStyles>
   )
 }

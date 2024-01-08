@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import backgroundCircle from '../../assets/shared/desktop/bg-pattern-small-circle.svg';
 import { ButtonLinkStyles } from "../styles/ButtonLink";
+import { motion } from 'framer-motion';
 
-const LocationCallToActionStyles = styled.div`
+const LocationCallToActionStyles = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,10 +39,15 @@ const LocationCallToActionStyles = styled.div`
 
 `;
 
-export default function LocationCallToAction({location}) {
-
+export default function LocationCallToAction({location, index}) {
+  const delay = index / 6;
   return (
-    <LocationCallToActionStyles>
+    <LocationCallToActionStyles
+      initial={{y: 200}}
+      whileInView={{y: 0}}
+      transition={{delay: delay}}
+      viewport={{ once: true, amount: 0.01 }}
+    >
       <div className="img-container">
         <img src={location.svg} alt={location.alt}/>
         <img className="circle" src={backgroundCircle} aria-hidden="true"/>
