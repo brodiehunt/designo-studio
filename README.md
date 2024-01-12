@@ -2,12 +2,16 @@
 
 This is a solution to the [Designo agency website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/designo-multipage-website-G48K6rfUT). Front-end mentor challenges provide you with a design file which you are tasked to build out into a functional website.
 
+### Links
+
+- Github URL: [Code here](https://github.com/brodiehunt/designo-studio)
+- Live Site URL: [Designo Studio](https://brodie-designo-studios.netlify.app/)
+
 ## Table of contents
 
 - [Installation](#installation)
 - [The challenge](#the-challenge)
 - [Screenshot](#screenshot)
-- [Links](#links)
 - [Built with](#built-with)
 
 ## Overview
@@ -50,11 +54,6 @@ Users should be able to:
 ![Design](./docs/design.png)
 ![Locations](./docs/locations.png)
 ![Contact](./docs/contact.png)
-
-### Links
-
-- Github URL: [Code here](https://github.com/brodiehunt/designo-studio)
-- Live Site URL: [Designo Studio](https://brodie-designo-studios.netlify.app/)
 
 ### Built with
 
